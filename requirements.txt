@@ -1,0 +1,10 @@
+atomicwrites==1.2.1
+attrs==18.2.0
+googleapis-common-protos==1.5.3
+grpcio==1.16.0
+more-itertools==4.3.0
+pluggy==0.8.0
+protobuf==3.6.1
+py==1.7.0
+pytest==3.9.3
+six==1.11.0

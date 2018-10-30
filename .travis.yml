@@ -1,0 +1,14 @@
+language: python
+dist: xenial
+sudo: true
+python: 
+  - "2.7"
+  - "3.5"
+  - "3.6"
+  - "3.7" 
+before_install:
+  - sudo apt-get install -y default-jre-headless 
+install:
+  - pip install -r requirements.txt
+  - pip install -e .
+script: pytest
