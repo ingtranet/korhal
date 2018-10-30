@@ -1,5 +1,8 @@
 # Korhal
-[![Build Status](https://travis-ci.com/ingtranet/korhal.svg?branch=master)](https://travis-ci.com/ingtranet/korhal)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/ingtranet/korhal.svg?style=flat-square)](https://github.com/ingtranet/korhal)
+[![PyPI](https://img.shields.io/pypi/v/korhal.svg?style=flat-square)](https://pypi.org/project/korhal/)
+[![Travis (.com) branch](https://img.shields.io/travis/com/ingtranet/korhal/master.svg?style=flat-square)](https://travis-ci.com/ingtranet/korhal)
+[![Codacy branch grade](https://img.shields.io/codacy/grade/b8ad24518efb4bec9a68b32eeb994d78/master.svg?style=flat-square)](https://app.codacy.com/project/cookieshake/korhal/dashboard)
 
 Korhal(KOrean Rpc-based Handy Application for Language-processing) is a python wrapper for several korean Part-Of-Speech taggers.
 
