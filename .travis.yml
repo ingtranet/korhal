@@ -1,14 +1,35 @@
-language: python
-dist: xenial
-sudo: true
-python: 
-  - "2.7"
-  - "3.5"
-  - "3.6"
-  - "3.7" 
-before_install:
-  - sudo apt-get install -y default-jre-headless 
+matrix:
+  include:
+  - os: windows
+    language: generic
+  - os: linux
+    dist: xenial
+    sudo: true
+    language: python
+    python: '2.7'
+  - os: linux
+    dist: xenial
+    sudo: true
+    language: python
+    python: '3.5'
+  - os: linux
+    dist: xenial
+    sudo: true
+    language: python
+    python: '3.6'
+  - os: linux
+    dist: xenial
+    sudo: true
+    language: python
+    python: '3.7'
 install:
-  - pip install -r requirements.txt
-  - pip install -e .
+- pip install -r requirements.txt
+- pip install -e .
 script: pytest
+deploy:
+  provider: pypi
+  user: cookieshake
+  password:
+    secure: sOBulYagDEabtmVBLTDoKfUoEf/cPEAavzrhhZKLjd1LyjNfjeGTH0luepOELGnEIz0dJMkea9ofAm2XeVbDSJlPTv1n74aCAQTXAJsuTDsimimzD98u+ODiPeO6fQzyUKoj0NFinjWmk6GTBcsfN9eAbZi29U7rl7Dtc+pSaaoa/genJOiWoIjsr5c1fN8ErZwj95holhdTdauDqxyTX/iOVLvESKj+XCZzdgstLaRcAPVLGQLr3DpmB63F0ptlfgrUKJuED3GQnxOTMkZ1tB7SswJXi0vZ3xjN2d1YKl293A61ZtXao/TSDfe82w8Nyo/8uGRryUa2SpWQZXbz6U12zBBxlOPAXz++eBK3Nob32m1uGFckAZ0ApWOJzIZaGKNiTGbWwtipZDXlnVzu5PciesPjD8ifGR4siW/uGxel5TocusWtlQ3x50znQ9dNA0P96S9jGWKgqMtCLITE6tSyTiBs0MAhvFechsf6li9pu4AqgbM+qUZIaEz3rIZw52RjpjFCilvaJlwElGjMIJZQgA7+dzZHpuEtLwYIqwcM69RaPGdVMQuuBuipYVALpjheG9Pc/1R+0CmNcMKeONqScuI59NUMVRT1KGyIvYILWlmub6iXWn75n1WusSJPJxw4Ak+KDqlL5cbIh0FAAouvBh1lTIQB7wc9Bnvas9c=
+  on:
+    tags: true
