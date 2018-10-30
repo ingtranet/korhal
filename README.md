@@ -1,5 +1,5 @@
 # Korhal
-[![Build Status](https://travis-ci.com/cookieshake/korhal.svg?branch=master)](https://travis-ci.com/cookieshake/korhal)
+[![Build Status](https://travis-ci.com/ingtranet/korhal.svg?branch=master)](https://travis-ci.com/ingtranet/korhal)
 
 Korhal(KOrean Rpc-based Handy Application for Language-processing) is a python wrapper for several korean Part-Of-Speech taggers.
 
