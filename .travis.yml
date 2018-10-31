@@ -1,7 +1,7 @@
 matrix:
   include:
   - os: windows
-    language: generic
+    language: shell
   - os: linux
     dist: xenial
     sudo: true
@@ -22,9 +22,12 @@ matrix:
     sudo: true
     language: python
     python: '3.7'
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then choco install -y python; fi
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then export PATH=/c/Python37:/c/Python37/Scripts:$PATH; fi
 install:
-- pip install -r requirements.txt
-- pip install -e .
+  - pip install -r requirements.txt
+  - pip install -e .
 script: pytest
 deploy:
   provider: pypi
