@@ -29,7 +29,8 @@ class CustomDevelopCommand(develop):
         download_server_jar()
         develop.run(self)
 
-with open("README.md", "r", encoding="utf-8") as fh:
+import io
+with io.open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
