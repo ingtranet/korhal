@@ -25,13 +25,22 @@ from korhal.komoran import tokenize
 
 result = tokenize("집에 가서 잠을 자고 싶다")
 # result => Token(text=집,pos=NNG), Token(text=에,pos=JKB), Token(text=가,pos=VV), Token(text=아서,pos=EC), Token(text=잠,pos=NNG), Token(text=을,pos=JKO), Token(text=자,pos=VV), Token(text=고,pos=EC), Token(text=싶,pos=VX), Token(text=다,pos=EC)]
+print(result.text) # => 집
+print(result.pos) # => NNG
 
-from korhal.aio.komoran import tokenize
+nouns = [token.text for token in result if token.pos.startswith('N')]
+```
 
-future = tokenize("집에 가서 잠을 자고 싶다")
-# future => <Future at 0x10a335d30 state=finished returned list>
-result = future.result()
-# result => [Token(text=집,pos=NNG), Token(text=에,pos=JKB), Token(text=가,pos=VV), Token(text=아서,pos=EC), Token(text=잠,pos=NNG), Token(text=을,pos=JKO), Token(text=자,pos=VV), Token(text=고,pos=EC), Token(text=싶,pos=VX), Token(text=다,pos=EC)]
+## Asynchronous methods
+
+With `korhal.aio`, you can use asynchronous methods. The performance of multi-core systems can be slightly improved when performing extensive processing.
+
+``` python
+from korhal.aio.opentextkorean import tokenize
+ 
+texts = ['달디단 맛있는 케이크가 있었다', '솜사탕 같이 귀여운 구름']
+futures = [tokenize(text) for text in texts]
+results = [f.result() for f in futures]
 ```
 
 ## Thanks to
