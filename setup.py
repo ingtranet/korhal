@@ -11,12 +11,12 @@ def download_server_jar():
     else:
         from urllib.request import urlretrieve
 
-    SERVER_JAR_URL = 'https://github.com/ingtranet/korhal-java-server/releases/download/0.1.1/korhal-java-server-0.1.1.jar'
+    SERVER_JAR_URL = 'https://github.com/ingtranet/korhal-java-server/releases/download/0.1.2/korhal-java-server-0.1.2.jar'
     CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
 
     urlretrieve(
         SERVER_JAR_URL, 
-        '{}/korhal/korhal-java-server-0.1.1.jar'.format(CURRENT_PATH)
+        '{}/korhal/korhal-java-server-0.1.2.jar'.format(CURRENT_PATH)
     )  
 
 class CustomBuildPyCommand(build_py):

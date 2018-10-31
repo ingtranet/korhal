@@ -10,7 +10,7 @@ def init_server():
         java_path = os.path.join(os.getenv('JAVA_HOME'), 'bin', 'java')
     else:
         java_path = 'java'
-    jar_path = os.path.join(install_path, 'korhal-java-server-0.1.1.jar')
+    jar_path = os.path.join(install_path, 'korhal-java-server-0.1.2.jar')
     
     args = [java_path, '-jar', jar_path]
     server = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
